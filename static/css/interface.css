@@ -1,0 +1,190 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #6b6b6b;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* =========================
+   CENTER WRAPPER
+========================= */
+.app-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 56px; /* space for navbar */
+}
+
+/* =========================
+   CHAT CARD
+========================= */
+.chat-app {
+    width: 420px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   HEADER
+========================= */
+.chat-header {
+    background: #3f3f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    font-size: 22px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+/* =========================
+   CHAT BODY
+========================= */
+.chat-body {
+    flex: 1;                 /* takes remaining height */
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Background image */
+.chat-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+    z-index: 0;
+}
+
+/* =========================
+   MESSAGES CONTAINER
+========================= */
+.chatbox__messages {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+
+    height: 100%;
+    overflow-y: auto;        /* 🔥 ENABLE SCROLL */
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MESSAGE ROW
+========================= */
+.messages__item {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 12px;
+    max-width: 80%;
+}
+
+/* Bot message (left) */
+.messages__item--visitor {
+    align-self: flex-start;
+}
+
+/* User message (right) */
+.messages__item--operator {
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+/* =========================
+   MESSAGE BUBBLES
+========================= */
+.message-bubble {
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Bot bubble */
+.bot {
+    background: #a7f36d;
+    color: #000000;
+}
+
+/* User bubble */
+.user {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* =========================
+   BOT AVATAR
+========================= */
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* =========================
+   INPUT AREA
+========================= */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #cccccc;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.send__button {
+    padding: 12px 18px;
+    border: none;
+    background: #3f3f3f;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.send__button:hover {
+    background: #2f2f2f;
+}
+
+/* =========================
+   SCROLLBAR (VISIBLE & SMOOTH)
+========================= */
+.chatbox__messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbox__messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+}
+
+.chatbox__messages::-webkit-scrollbar-track {
+    background: transparent;
+}
